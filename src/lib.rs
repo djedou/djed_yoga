@@ -3,11 +3,14 @@
 #![allow(non_snake_case)]
 
 extern crate ordered_float;
+extern crate djed_self_tokenize_macro;
+extern crate djed_self_tokenize_trait;
 #[cfg(feature = "serde_support")]
 extern crate serde;
 #[macro_use]
 #[cfg(feature = "serde_support")]
 extern crate serde_derive;
+
 
 // API created by bindgen
 mod internal {

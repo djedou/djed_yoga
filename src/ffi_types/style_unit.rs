@@ -1,7 +1,8 @@
 use internal;
 use ordered_float::OrderedFloat;
-
-#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash, Copy, Clone)]
+use djed_self_tokenize_macro::SelfTokenize;
+use djed_self_tokenize_trait::ToCustomTokens;
+#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash, Copy, Clone, SelfTokenize)]
 #[cfg_attr(feature = "serde_support", derive(Serialize, Deserialize))]
 pub enum StyleUnit {
 	UndefinedValue,

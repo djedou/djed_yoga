@@ -16,6 +16,8 @@ bindgen = "0.55.1"
 cc = "1.0.62"
 
 [dependencies]
+djed_self_tokenize_macro = { git = "https://github.com/djedou/djed_self_tokenize.git"}
+djed_self_tokenize_trait = { git = "https://github.com/djedou/djed_self_tokenize.git"}
 ordered-float = "2.0.0"
 serde = { version = "1.0.117", optional = true }
 serde_derive = { version = "1.0.117", optional = true }

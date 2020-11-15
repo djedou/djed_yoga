@@ -21,11 +21,13 @@ use ordered_float::OrderedFloat;
 use std::any::Any;
 use std::ops::Deref;
 use std::os::raw::c_void;
+use djed_self_tokenize_macro::SelfTokenize;
+use djed_self_tokenize_trait::ToCustomTokens;
 
 pub type BaselineFunc = Option<extern "C" fn(NodeRef, f32, f32) -> f32>;
 pub type MeasureFunc = Option<extern "C" fn(NodeRef, f32, MeasureMode, f32, MeasureMode) -> Size>;
 
-#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash, Copy, Clone)]
+#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash, Copy, Clone, SelfTokenize)]
 #[cfg_attr(feature = "serde_support", derive(Serialize, Deserialize))]
 pub enum FlexStyle {
 	AlignContent(Align),
@@ -81,7 +83,7 @@ pub enum FlexStyle {
 	Width(StyleUnit),
 }
 
-#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash, Copy, Clone)]
+#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash, Copy, Clone, SelfTokenize)]
 #[cfg_attr(feature = "serde_support", derive(Serialize, Deserialize))]
 pub struct Layout {
 	left: OrderedFloat<f32>,
