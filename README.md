@@ -1,33 +1,17 @@
-Yoga-rs
+djed_yoga
 =======
-[![Build Status](https://travis-ci.org/bschwind/yoga-rs.svg?branch=master)](https://travis-ci.org/bschwind/yoga-rs)
 
 A Rust wrapper for Facebook's Yoga layout library.
-
-You may also want to check out [stretch](https://github.com/vislyhq/stretch) as it is a pure Rust implementation.
-
-Dependencies
-------------
-- cargo
-- rustc
-
-Build
------
-    $ cargo build --release
-
-Run Example
------------
-	$ cargo run --release --example layout
 
 Example Code
 ------------
 ```rust
 #[macro_use]
-extern crate yoga;
+extern crate djed_yoga;
 
-use yoga::prelude::*;
-use yoga::Node;
-use yoga::StyleUnit::{Auto, UndefinedValue};
+use djed_yoga::prelude::*;
+use djed_yoga::Node;
+use djed_yoga::StyleUnit::{Auto, UndefinedValue};
 
 fn main() {
 	let mut node = Node::new();
@@ -60,31 +44,4 @@ fn main() {
 
 	println!("Layout is {:#?}", child.get_layout());
 }
-```
-
-Testing
--------
-The unit tests are automatically generated based on upstream fixtures and should not be edited manually.
-
-```
-$ cargo test
-```
-
-To generate the test cases:
-Download the [ChromeDriver](http://chromedriver.chromium.org) binary and put it somewhere in your `$PATH`. Linux/MacOS example:
-
-```
-$ cp chromedriver /usr/local/bin
-```
-
-Install the required Ruby gem.
-
-```
-$ sudo gem install watir
-```
-
-Generate the tests.
-
-```
-$ ruby gentest/gentest.rb
 ```
