@@ -11,6 +11,12 @@ pub enum StyleUnit {
 	Auto,
 }
 
+impl Default for StyleUnit {
+	fn default() -> Self {
+		StyleUnit::UndefinedValue
+	}
+}
+
 impl From<StyleUnit> for internal::YGUnit {
 	fn from(s: StyleUnit) -> internal::YGUnit {
 		match s {
